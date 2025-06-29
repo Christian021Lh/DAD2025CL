@@ -13,38 +13,42 @@ import { MatDialog } from '@angular/material/dialog';
     imports: [CommonModule, RouterOutlet, MatButtonModule, MatIconModule],
     standalone: true,
     template: `
-        <div class="w-full mx-auto p-6 bg-white rounded overflow-hidden shadow-lg">
+        <div class="w-full mx-auto p-6 bg-white rounded-xl overflow-hidden shadow-lg">
             <!-- Encabezado principal -->
-            <div class="flex justify-between items-center mb-2 bg-slate-300 text-black p-4 rounded">
-                <h2 class="text-2xl font-bold">
-                    Lista de <span class="text-primary">Productos</span>
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 text-white p-5 rounded-lg shadow-sm">
+                <h2 class="text-2xl font-bold tracking-tight">
+                    Lista de <span class="underline underline-offset-4 decoration-white/60">Productos</span>
                 </h2>
-                <button mat-flat-button [color]="'primary'" (click)="goNew()">
-                    <mat-icon [svgIcon]="'heroicons_outline:plus'"></mat-icon>
-                    <span class="ml-2">Nuevo Producto</span>
+
+                <button
+                    mat-flat-button
+                    color="accent"
+                    class="mt-4 sm:mt-0 bg-white text-sky-600 hover:bg-gray-100 transition font-semibold shadow-md rounded px-4 py-2 flex items-center gap-2"
+                    (click)="goNew()"
+                >
+                    <mat-icon [svgIcon]="'heroicons_outline:plus'" class="text-sky-600"></mat-icon>
+                    <span>Nuevo Producto</span>
                 </button>
             </div>
-            <div class="bg-white rounded overflow-hidden shadow-lg">
-                <div class="p-2 overflow-scroll px-0">
-                    <table class="w-full table-fixed">
-                        <thead class="bg-primary-600 text-white">
-                        <tr>
-                            <th class="w-1/6 table-head text-center px-5 border-r">#</th>
-                            <th class="w-2/6 table-header text-center px-5 border-r">
-                                Nombre
-                            </th>
-                            <th class="w-2/6 table-header text-center px-5 border-r">
-                                Descripción
-                            </th>
-                            <th class="w-2/6 table-header text-center px-5 border-r">
-                                Código
-                            </th>
-                            <th class="w-2/6 table-header text-center">
-                                Acciones
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody
+        </div>
+
+        <div class="bg-white rounded-xl overflow-hidden shadow-lg">
+            <div class="p-2 overflow-x-auto">
+                <table class="w-full table-fixed">
+                    <thead class="bg-gradient-to-r from-sky-500 via-sky-600 to-sky-700 text-white">
+                    <tr>
+                        <th class="w-1/6 text-center px-5 py-3 border-r font-semibold">#</th>
+                        <th class="w-2/6 text-center px-5 py-3 border-r font-semibold">Nombre</th>
+                        <th class="w-2/6 text-center px-5 py-3 border-r font-semibold">Descripción</th>
+                        <th class="w-2/6 text-center px-5 py-3 border-r font-semibold">Código</th>
+                        <th class="w-2/6 text-center px-5 py-3 font-semibold">Acciones</th>
+                    </tr>
+                    </thead>
+                    <!-- <tbody> ... </tbody> -->
+                </table>
+
+
+        <tbody
                             class="bg-white"
                             *ngFor="let r of categories; let i = index">
                         <tr class="hover:bg-gray-100">
@@ -78,7 +82,7 @@ import { MatDialog } from '@angular/material/dialog';
                             </td>
                         </tr>
                         </tbody>
-                    </table>
+
                     <!--<div class="px-5 py-2 bg-white border-t flex flex-col xs:flex-row items-center xs:justify-between">
                         <span class="text-xs xs:text-sm text-gray-900">
                             Showing 1 to 4 of 50 Entries
@@ -95,7 +99,7 @@ import { MatDialog } from '@angular/material/dialog';
                     </div>-->
                 </div>
             </div>
-        </div>
+
     `,
 })
 export class ClientListComponent implements OnInit {

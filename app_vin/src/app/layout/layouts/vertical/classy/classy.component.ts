@@ -89,8 +89,8 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
      */
     test_menu = [
         {
-            id: 'example',
-            title: 'Example',
+            id: '',
+            title: '',
             type: 'basic',
             icon: 'heroicons_outline:chart-pie',
             link: '/example',
@@ -140,49 +140,49 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
                 children: [
                     {
                         id: 'SetupRole',
-                        title: 'Setup Role',
+                        title: ' Role',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/role',
                     },
                     {
                         id: 'SetupClient',
-                        title: 'Setup Cliente',
+                        title: 'Cliente',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/client',
                     },
                     {
                         id: 'SetupCategory',
-                        title: 'Setup Producto',
+                        title: ' Producto',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/category',
                     },
                     {
                         id: 'SetupVehiculo',
-                        title: 'Setup Vehiculo',
+                        title: ' Vehiculo',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/vehiculo',
                     },
                     {
                         id: 'SetupLibroCarga',
-                        title: 'Setup LibroCarga',
+                        title: ' LibroCarga',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/libroCarga',
                     },
                     {
                         id: 'SetupMaps',
-                        title: 'Setup Maps',
+                        title: ' Maps',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/Maps',
                     },
                     {
                         id: 'SetupMaps',
-                        title: 'Setup Registro Envio',
+                        title: ' Registro Envio',
                         type: 'basic',
                         icon: 'heroicons_outline:chart-pie',
                         link: '/homeScreen/setup/Maps',
@@ -194,10 +194,10 @@ export class ClassyLayoutComponent implements OnInit, OnDestroy {
         ];
         this.user = {
             id: 'cfaad35d-07a3-4447-a6c3-d8c3d54fd5df',
-            name: 'Brian Hughes',
-            email: 'hughes.brian@company.com',
-            avatar: 'assets/images/avatars/brian-hughes.jpg',
-            status: 'online',
+            name: '',
+            email: '',
+            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDQFK5NMqdrHxe_9jApzf0vZKxlhe1JUGZvw&s',
+            status: '',
         };
 
         // Subscribe to media changes

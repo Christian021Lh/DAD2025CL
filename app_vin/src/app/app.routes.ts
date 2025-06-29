@@ -3,14 +3,14 @@ import { initialDataResolver } from 'app/app.resolvers';
 import { LayoutComponent } from 'app/layout/layout.component';
 import { AuthGuard } from './providers/guards/auth.guard';
 import { NoAuthGuard } from './providers/guards/noAuth.guard';
+import { EntradaComponent } from 'app/modules/entrada/entrada.component';
 
 // @formatter:off
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 export const appRoutes: Route[] = [
-    // Redirect empty path to '/example'
-    { path: '', pathMatch: 'full', redirectTo: 'example' },
-    // { path: '/role', pathMatch: 'full', redirectTo: 'app-role' },
+    // Carga el componente de entrada en la ruta raíz
+    { path: '', component: EntradaComponent },
 
     // Redirect signed-in user to the '/example'
     //
@@ -34,21 +34,21 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/auth/confirmation-required/confirmation-required.routes'
-                    ),
+                        ),
             },
             {
                 path: 'forgot-password',
                 loadChildren: () =>
                     import(
                         'app/modules/auth/forgot-password/forgot-password.routes'
-                    ),
+                        ),
             },
             {
                 path: 'reset-password',
                 loadChildren: () =>
                     import(
                         'app/modules/auth/reset-password/reset-password.routes'
-                    ),
+                        ),
             },
             {
                 path: 'sign-in',
@@ -93,7 +93,7 @@ export const appRoutes: Route[] = [
                 loadChildren: () =>
                     import(
                         'app/modules/auth/unlock-session/unlock-session.routes'
-                    ),
+                        ),
             },
         ],
     },
@@ -130,21 +130,21 @@ export const appRoutes: Route[] = [
 
         ]
 
-            // {
-            //     path: 'example',
-            //     loadChildren: () =>
-            //         import('app/modules/admin/example/example.routes'),
-            // },
-            // {
-            //     path: 'role',
-            //     loadChildren: () =>
-            //         import('app/modules/admin/role/role.routes'),
-            // },
-            // {
-            //     path: 'users',
-            //     loadChildren: () =>
-            //         import('app/modules/admin/users/user.routes'),
-            // },
+        // {
+        //     path: 'example',
+        //     loadChildren: () =>
+        //         import('app/modules/admin/example/example.routes'),
+        // },
+        // {
+        //     path: 'role',
+        //     loadChildren: () =>
+        //         import('app/modules/admin/role/role.routes'),
+        // },
+        // {
+        //     path: 'users',
+        //     loadChildren: () =>
+        //         import('app/modules/admin/users/user.routes'),
+        // },
 
     },
 ];
