@@ -52,7 +52,7 @@ spring:
         - id: ms-librocarga-service
           uri: lb://ms-librocarga-service
           predicates:
-            - Path=/librocarga/**
+            - Path=/librocarga/**, /producto/**
           filters:
             - AuthFilter
         - id: ms-gestionenvio-service
